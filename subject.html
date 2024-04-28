@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subjects Reviewer</title>
+  <style>
+    /* Add your CSS styles here */
+    body {
+      background-color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 80%;
+      background-color: #1a1a1a;
+      border-radius: 50px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      background-color: #3d9970;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      border-radius: 20px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .subject-box {
+      background-color: #3d9970;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    .tab {
+      background-color: #3f3f3f;
+      border: none;
+      color: #fff;
+      font-size: 1em;
+      margin: 0.5em;
+      padding: 0.8em 1.5em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border-radius: 15px;
+      text-transform: uppercase;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;
+    }
+    .tab:hover {
+      background-color: #2ecc71;
+    }
+    .tab-content {
+      display: none;
+      background-color: #3f3f3f;
+      padding: 10px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      margin: 20px auto;
+      width: 90%;
+      max-width: 90vw;
+      text-align: center;
+      font-size: 1em;
+      transition: all 0.3s;
+      position: relative;
+    }
+    .active-tab {
+      background-color: #3f3f3f !important;
+    }
+    .active-tab:hover {
+      background-color: #2ecc71 !important;
+    }
+    .tab-content h2 {
+      margin-top: 0;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2.5em;
+      background-color: #3f3f3f;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .exit-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 1.2em; /* Increased font size for the exit button */
+    }
+    .exit-button:hover {
+      font-size: 1.4em; /* Increase font size on hover for better visibility */
+    }
+    .pdf-container {
+      width: 100%;
+      height: 800px; /* Adjust height as needed */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Subjects Reviewers</h1>
+    </header>
+    <div class="subject-box">
+      <h2>Social Sciences</h2>
+      <div class="tabs">
+        <div class="tab" data-tab="diss" onclick="openTab(event, 'diss')">DISS (Disciplines and Ideas in Social Sciences)</div>
+        <div class="tab" data-tab="polgov" onclick="openTab(event, 'polgov')">POLGOV (Politics and Governance)</div>
+      </div>
+      <div id="diss" class="tab-content">
+        <h2>Diss (Disciplines and Ideas in Social Sciences)</h2>
+        <div class="pdf-container">
+          <!-- Embed PDF here -->
+          <embed src="Diss.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+        <div class="exit-button" onclick="closeTab('diss')">x</div>
+      </div>
+      <div id="polgov" class="tab-content">
+        <h2>Polgov (Politics and Governance)</h2>
+        <div class="pdf-container">
+          <!-- Embed PDF here -->
+          <embed src="POLGOV.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+        <div class="exit-button" onclick="closeTab('polgov')">x</div>
+      </div>
+    </div>
+    <div class="subject-box">
+      <h2>Literature</h2>
+      <div class="tabs">
+        <div class="tab" data-tab="raw" onclick="openTab(event, 'raw')">RAW (Reading and Writing)</div>
+        <div class="tab" data-tab="pilinglarang" onclick="openTab(event, 'pilinglarang')">PILING LARANG (Pagsulat sa Filipino sa Piling Larangan - Akademik)</div>
+        <div class="tab" data-tab="21stcentury" onclick="openTab(event, '21stcentury')">21ST CENTURY (21ST CENTURY LITERATURE OF THE PHILIPPINES AND THE WORLD)</div>
+        <div class="tab" data-tab="pagpag" onclick="openTab(event, 'pagpag')">PAGPAG (Pagbasa at Pagsuri Tungo sa Pananaliksik)</div>
+      </div>
+      <div id="raw" class="tab-content">
+        <h2>RAW (Reading and Writing)</h2>
+        <div class="pdf-container">
+          <!-- Embed PDF here -->
+          <embed src="RAW.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+        <div class="exit-button" onclick="closeTab('raw')">x</div>
+      </div>
+      <div id="pilinglarang" class="tab-content">
+        <h2>Piling Larang (Pagsulat sa Filipino sa Piling Larangan - Akademik)</h2>
+        <div class="pdf-container">
+          <!-- Embed PDF here -->
+          <embed src="Piling-Larang.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+        <div class="exit-button" onclick="closeTab('pilinglarang')">x</div>
+      </div>
+      <div id="21stcentury" class="tab-content">
+        <h2>21st Century (21st Century Literature of the Philippines and the World)</h2>
+        <div class="pdf-container">
+          <!-- Embed PDF here -->
+          <embed src="21st.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+        <div class="exit-button" onclick="closeTab('21stcentury')">x</div>
+      </div>
+      <div id="pagpag" class="tab-content">
+        <h2>Pagpag (Pagbasa at Pagsuri Tungo sa Pananaliksik)</h2>
+        <div class="pdf-container">
+          <!-- Embed PDF here -->
+          <embed src="pagpag-1.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+        <div class="exit-button" onclick="closeTab('pagpag')">x</div>
+      </div>
+    </div>
+    <div class="subject-box">
+      <h2>Other Subjects</h2>
+      <div class="tabs">
+        <div class="tab" data-tab="stats" onclick="openTab(event, 'stats')">STATS (Statistics and Probability)</div>
+        <div class="tab" data-tab="cpar" onclick="openTab(event, 'cpar')">CPAR (Contemporary Philippine Arts)</div>
+        <div class="tab" data-tab="hope" onclick="openTab(event, 'hope')">HOPE (Health Optimizing Physical Education)</div>
+      </div>
+      <div id="stats" class="tab-content">
+        <h2>Stats (Statistics and Probability)</h2>
+        <div class="pdf-container">
+          <!-- Embed PDF here -->
+          <embed src="Stats.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+        <div class="exit-button" onclick="closeTab('stats')">x</div>
+      </div>
+      <div id="cpar" class="tab-content">
+        <h2>CPAR (Contemporary Philippine Arts)</h2>
+        <div class="pdf-container">
+          <!-- Embed PDF here -->
+          <embed src="Cpar.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+        <div class="exit-button" onclick="closeTab('cpar')">x</div>
+      </div>
+      <div id="hope" class="tab-content">
+        <h2>Hope (Health Optimizing Physical Education)</h2>
+        <div class="pdf-container">
+          <!-- Embed PDF here -->
+          <embed src="Hope.pdf" type="application/pdf" width="100%" height="100%">
+        </div>
+        <div class="exit-button" onclick="closeTab('hope')">x</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // JavaScript functions for tab functionality
+    function openTab(evt, tabName) {
+      // Declare all variables
+      let tabcontent, tablinks;
+
+      // Get all tabcontent elements
+      tabcontent = document.querySelectorAll(".tab-content");
+
+      // Hide all tabcontent elements
+      tabcontent.forEach(tab => {
+        tab.style.display = "none";
+      });
+
+      // Get all tablinks elements
+      tablinks = document.querySelectorAll(".tab");
+
+      // Remove the "active" class from all tablinks
+      tablinks.forEach(link => {
+        link.classList.remove("active-tab");
+      });
+
+      // Show the selected tabcontent and add the "active" class to the selected tablink
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.classList.add("active-tab");
+    }
+
+    function closeTab(tabName) {
+      // Hide the tabcontent and remove the "active" class from the corresponding tablink
+      document.getElementById(tabName).style.display = "none";
+      document.querySelector(`[data-tab=${tabName}]`).classList.remove("active-tab");
+    }
+  </script>
+</body>
+</html>
